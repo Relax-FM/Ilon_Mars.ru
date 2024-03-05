@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:12.3
+    container_name: ilon-mars-db
+    environment:
+      - POSTGRES_USER=gasanov
+      - POSTGRES_PASSWORD=gosha_lev
+      - POSTGRES_DB=ilon-mars
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    restart: always
+
+  nginx:
+    image: nginx:1.19.2
+    container_name: ilon-mars-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./static:/home/app/web/staticfiles
+    depends_on:
+      - backend
+    restart: always
+
+  redis:
+    image: redis:5.0.5
+    container_name: ilon-mars-redis
+    expose:
+      - 6379
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    container_name: ilon-mars-backend
+    expose:
+      - 8000
+    volumes:
+      - ./:/backend
+    command: gunicorn -b 0.0.0.0:8000 main.wsgi:application
+    restart: always
+    depends_on:
+      - db
