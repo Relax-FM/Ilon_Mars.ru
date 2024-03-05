@@ -6,11 +6,13 @@ import ReportSend from "./components/ReportSend";
 import ReportView from "./components/ReportView";
 function App() {
   return (
-    <Routes>
-        <Route path={"/"} element={<Home/>} />
-        <Route path={"/send-report"} element={<ReportSend/>} />
-        <Route path={"/view-report"} element={<ReportView/>} />
-    </Routes>
+    <div className={"App"}>
+        <Routes>
+            <Route path={"/"} element={<Home/>} />
+            <Route path={"/send-report"} element={<ReportSend/>} />
+            <Route path={"/view-report"} element={<ReportView/>} />
+        </Routes>
+    </div>
   );
 }
 

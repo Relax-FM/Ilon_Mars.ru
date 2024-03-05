@@ -1,14 +1,36 @@
-import logo from "../logo.svg";
 import {Link} from "react-router-dom";
+import {useState} from "react";
 
 function Home() {
+    const [mode, setMode] = useState("earth");
+
+    const toggleMode = () => {
+        if (mode === "earth") {
+            setMode("mars");
+        } else {
+            setMode("earth");
+        }
+    };
+
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#f5f5f5' }}>
-            <h1 style={{ marginBottom: '50px' }}>Научная лаборатория на Марсе</h1>
-            <div style={{ marginBottom: '20px' }}>
-                <Link to="/send-report" style={{ marginRight: '10px', padding: '10px 20px', backgroundColor: '#007BFF', color: 'white', textDecoration: 'none', borderRadius: '5px' }}>Отправить отчет</Link>
-                <Link to="/view-reports" style={{ padding: '10px 20px', backgroundColor: '#28A745', color: 'white', textDecoration: 'none', borderRadius: '5px' }}>Просмотреть отчеты</Link>
+        <div className={`page ${mode}`}>
+            <div className="page__header">
+                <h1 className="page__title">
+                    {mode === "earth" ? "Земля. " : "Марс. "}
+                    Наука. Будущее.
+                </h1>
             </div>
+            <div className="page__body info">
+                <button className="no-button info__item-earth" onClick={toggleMode}>
+                </button>
+                <Link to="/auth">
+                    <button className="no-button info__item-btn">
+                        Авторизация
+                    </button>
+                </Link>
+                <button className="no-button info__item-time"></button>
+            </div>
+
         </div>
     );
 }
