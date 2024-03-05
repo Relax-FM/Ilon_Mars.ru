@@ -1,0 +1,10 @@
+asgiref
+Django
+django-rest-framework
+djangorestframework
+gunicorn
+packaging
+pytz
+sqlparse
+typing_extensions
+psycopg2-binary
