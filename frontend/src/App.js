@@ -4,6 +4,8 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./components/Home"
 import ReportSend from "./components/ReportSend";
 import ReportView from "./components/ReportView";
+
+
 function App() {
   return (
     <div className={"App"}>

@@ -1,9 +1,24 @@
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+
+const useCurrentTime = () => {
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(new Date().toLocaleTimeString());
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    return time;
+};
 
 function Home() {
-    const [mode, setMode] = useState("mars");
+    const [mode, setMode] = useState("earth");
     const [text, setText] = useState("Земля");
+    const time = useCurrentTime();
+
 
     const toggleMode = () => {
         if (mode === "earth") {
@@ -31,7 +46,7 @@ function Home() {
                         Авторизация
                     </button>
                 </Link>
-                <button className="no-button info__item-time" data-time="1:00(Msc)"></button>
+                <button className="no-button info__item-time" data-time={time}></button>
             </div>
 
         </div>

@@ -23,7 +23,7 @@
   gap:18%;
   z-index: 2;
 }
-
+/*TODO: replace 1048 with something adaptive*/
 .page__header {
   width: 1048px;
 }
