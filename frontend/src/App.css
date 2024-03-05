@@ -66,13 +66,14 @@
 .mars::before {
   left: 1%;
   right: -10%;
+  top: -11%;
   background-size: 95%;
-  height: 120%;
+  height: 140%;
   transform: rotate(-57.876deg);
   background-image: url("../public/pics/main_mars.png");
 }
 
-.page__body.info {
+.info {
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -98,8 +99,7 @@
   color: var(--main-color);
 }
 
-.info__item-earth,
-.info__item-mars,
+.info__item-planet,
 .info__item-time {
   display: inline-flex;
   align-items: center;
@@ -111,21 +111,14 @@
   height:var(--circle-height);
   position: relative;
 }
-
-.info__item-earth::after {
-  content: "Марс";
-  position: absolute;
-  left: 140%;
-}
-
-.info__item-mars::after {
-  content: "Земля";
+.info__item-planet::after {
+  content: attr(data-planet);
   position: absolute;
   left: 140%;
 }
 
 .info__item-time::before {
-  content: "1:00(Msc)";
+  content:  attr(data-time);
   position: absolute;
   right: 140%;
 }
