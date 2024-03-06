@@ -1,0 +1,20 @@
+.loading {
+    justify-content: center;
+    gap: unset;
+}
+.loading__image {
+    position: absolute;
+}
+.loading__status {
+    position: relative;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FFF;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 73px;
+    letter-spacing: 3px;
+}
+.text-effect {
+    color: black;
+}

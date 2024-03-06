@@ -3,6 +3,7 @@ import "./Home.css";
 import { useDispatch, useSelector } from 'react-redux';
 import useCurrentTime from "./useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
+import LoadingPage from "./LoadingPage";
 
 
 function Home() {
@@ -12,6 +13,8 @@ function Home() {
     const nextPlanet = () => text(mode !== 'earth')
     const mode = useSelector(state => state.mode);
     const time = useCurrentTime();
+    const isLoading = useSelector(state => state.isLoading);
+
 
     const toggleMode = () => {
         if (mode === 'earth') {
@@ -20,6 +23,11 @@ function Home() {
             dispatch(setMode('earth'));
         }
     };
+    if (isLoading) {
+        return (
+            <LoadingPage/>
+        );
+    }
 
     return (
         <div className={`page ${mode}`}>

@@ -19,7 +19,6 @@
     color: var(--secondary-color);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     gap:18%;
     z-index: 2;
@@ -39,6 +38,7 @@
 }
 
 .earth, .mars {
+    justify-content: flex-end;
     position: relative;
     overflow: hidden;
 }
