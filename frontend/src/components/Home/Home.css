@@ -1,4 +1,3 @@
-/* Define common variables */
 :root {
     --main-font: Montserrat, serif;
     --main-color: #080200;
@@ -19,7 +18,6 @@
     color: var(--secondary-color);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     gap:18%;
     z-index: 2;
@@ -38,13 +36,14 @@
     margin: 0;
 }
 
-.earth, .mars {
+.page-earth, .page-mars {
+    justify-content: flex-end;
     position: relative;
     overflow: hidden;
 }
 
 /*background images*/
-.earth::before, .mars::before {
+.page-earth::before, .page-mars::before {
     content: "";
     position: absolute;
     top:0;
@@ -60,11 +59,11 @@
     transition: all 0.5s ease;
 }
 
-.earth::before {
+.page-earth::before {
     background-image: url("../../../public/pics/main_earth.png");
 }
 
-.mars::before {
+.page-mars::before {
     left: 1%;
     right: -10%;
     top: -11%;
@@ -127,7 +126,7 @@
 /*button animation */
 .info-btn,
 .info-planet {
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .info-btn:hover,

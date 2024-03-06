@@ -6,7 +6,7 @@ const initialState = {
     scientistName: '',
     reportContent: '',
     file: null,
-    isLoading: false,
+    isLoading: true,
 };
 
 function reducer(state = initialState, action) {

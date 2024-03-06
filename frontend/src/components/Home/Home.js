@@ -3,6 +3,7 @@ import "./Home.css";
 import { useDispatch, useSelector } from 'react-redux';
 import useCurrentTime from "./useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
+import PageLoading from "../PageLoading";
 
 
 function Home() {
@@ -12,6 +13,8 @@ function Home() {
     const nextPlanet = () => text(mode !== 'earth')
     const mode = useSelector(state => state.mode);
     const time = useCurrentTime();
+    const isLoading = useSelector(state => state.isLoading);
+
 
     const toggleMode = () => {
         if (mode === 'earth') {
@@ -20,9 +23,14 @@ function Home() {
             dispatch(setMode('earth'));
         }
     };
+    if (isLoading) {
+        return (
+            <PageLoading/>
+        );
+    }
 
     return (
-        <div className={`page ${mode}`}>
+        <div className={`page page-${mode}`}>
             <div className="page__header">
                 <h1 className="page__title">
                     {currentPlanet() + ". "}
@@ -39,9 +47,9 @@ function Home() {
                 </Link>
                 <button className="no-button info-time" data-time={time}></button>
             </div>
-
         </div>
     );
 }
+// TODO: fix bugs:info-time can have 'PM' and wrapped
 
 export default Home;
