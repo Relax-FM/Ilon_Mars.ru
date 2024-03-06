@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./components/Home"
 import ReportSend from "./components/ReportSend";
 import ReportView from "./components/ReportView";
+import Main from "./components/Main";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div className={"App"}>
         <Routes>
             <Route path={"/"} element={<Home/>} />
-            {/*<Route path={"/main"} element={<Main/>} />*/}
+            <Route path={"/main"} element={<Main/>} />
             <Route path={"/send-report"} element={<ReportSend/>} />
             <Route path={"/view-report"} element={<ReportView/>} />
         </Routes>
