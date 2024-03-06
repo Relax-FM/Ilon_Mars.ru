@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import "./LoadingPage.css";
+import "./PageLoading.css";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoading} from "../../reduxStore/actions";
 
-function LoadingPage() {
+function PageLoading() {
     const dispatch = useDispatch();
     const isLoading = useSelector(state => state.isLoading);
     const [rotation, setRotation] = useState(0);
@@ -12,6 +12,7 @@ function LoadingPage() {
         return Math.random() * (max - min) + min;
     }
 
+    // TODO; fix the speed the same in safari&Firefox
     useEffect(() => {
         if (isLoading) {
             const interval = setInterval(() => {
@@ -21,7 +22,7 @@ function LoadingPage() {
                     }
                    return  (prevRotation + getRandomSpeed(3,12));
                 });
-            }, 1);
+            }, 20);
             return () => clearInterval(interval);
         }
     }, [isLoading]);
@@ -50,4 +51,4 @@ function LoadingPage() {
 
     // Rest of your component
 }
-export default LoadingPage;
+export default PageLoading;
