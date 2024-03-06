@@ -33,6 +33,7 @@ function LoadingPage() {
                 <img
                     className={"loading__image"}
                     src="./pics/loading_image.png"
+                    alt={"loading"}
                     style={{
                         transform: `rotate(${rotation % 360}deg)`
                     }}
