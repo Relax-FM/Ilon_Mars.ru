@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./PageLoading.css";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoading} from "../../reduxStore/actions";
+import Row from "../Row";
 
 function PageLoading() {
     const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function PageLoading() {
     }, [rotation]);
 
     return (
-        <div className="page loading">
+        <Row className={`loading`}>
             <img
                 className={"loading__image"}
                 src="./pics/loading_image.png"
@@ -46,7 +47,7 @@ function PageLoading() {
             <p className="loading__status text-effect">
                 {Math.round((rotation)/360 * 100).toString().padStart(2, '0')}
             </p>
-        </div>
+        </Row>
     );
 
     // Rest of your component
