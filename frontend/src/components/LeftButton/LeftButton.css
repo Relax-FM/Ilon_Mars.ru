@@ -1,0 +1,36 @@
+/* unset button styles*/
+button.left-button {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    outline: inherit;
+}
+
+button.left-button::after {
+    content: attr(data-left-button);
+    text-align: center;
+    /*font-family: var(--main-font);*/
+    font-size: var(--main-font-size);
+    font-weight: var(--main-font-weight);
+    position: absolute;
+    left: 140%;
+}
+button.left-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: var(--circle-width);
+    height:var(--circle-height);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.hoverable:hover  {
+    transform: scale(1.05);
+}
+.hoverable:active  {
+    transform: scale(0.9);
+}

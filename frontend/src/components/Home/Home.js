@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import useCurrentTime from "./useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
 import PageLoading from "../PageLoading";
+import RightButton from "../RightButton";
+import LeftButton from "../LeftButton";
 
 
 function Home() {
@@ -38,14 +40,14 @@ function Home() {
                 </h1>
             </div>
             <div className="page__body info">
-                <button className="no-button info-planet" onClick={toggleMode} data-planet={nextPlanet()}>
-                </button>
+                <LeftButton onClick={toggleMode} data={nextPlanet()} />
                 <Link to="/auth">
                     <button className="no-button info-btn">
                         Авторизация
                     </button>
                 </Link>
-                <button className="no-button info-time" data-time={time}></button>
+                <RightButton data={time} disabled={true} />
+                {/*<button className="no-button info-time" data-time={time}></button>*/}
             </div>
         </div>
     );

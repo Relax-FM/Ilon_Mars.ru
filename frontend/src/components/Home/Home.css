@@ -80,9 +80,7 @@
     margin-bottom: 8%;
 }
 
-.info-btn,
-.info-planet::after,
-.info-time::before {
+.info-btn {
     text-align: center;
     /*font-family: var(--main-font);*/
     font-size: var(--main-font-size);
@@ -99,42 +97,15 @@
     color: var(--main-color);
 }
 
-.info-planet,
-.info-time {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: var(--circle-width);
-    height:var(--circle-height);
-    position: relative;
-}
-.info-planet::after {
-    content: attr(data-planet);
-    position: absolute;
-    left: 140%;
-}
-
-.info-time::before {
-    content:  attr(data-time);
-    position: absolute;
-    right: 140%;
-}
-
 /*button animation */
-.info-btn,
-.info-planet {
+.info-btn {
     transition: all 0.2s ease-in-out;
 }
 
-.info-btn:hover,
-.info-planet:hover {
+.info-btn:hover{
     transform: scale(1.05);
 }
 
-.info-btn:active,
-.info-planet:active {
+.info-btn:active {
     transform: scale(0.9);
 }
