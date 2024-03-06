@@ -3,7 +3,7 @@ import "./Home.css";
 import { useDispatch, useSelector } from 'react-redux';
 import useCurrentTime from "./useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
-import LoadingPage from "./LoadingPage";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 
 function Home() {
