@@ -3,11 +3,6 @@ export const setMode = (mode) => ({
     mode,
 });
 
-export const setText = (text) => ({
-    type: 'SET_TEXT',
-    text,
-});
-
 export const setScientistName = (name) => ({
     type: 'SET_SCIENTIST_NAME',
     name,

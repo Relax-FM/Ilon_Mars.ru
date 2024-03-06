@@ -3,7 +3,6 @@ import { createStore } from 'redux';
 
 const initialState = {
     mode: 'earth',
-    text: 'Земля',
     scientistName: '',
     reportContent: '',
     file: null,
@@ -14,8 +13,6 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_MODE':
             return { ...state, mode: action.mode };
-        case 'SET_TEXT':
-            return { ...state, text: action.text };
         case 'SET_SCIENTIST_NAME':
             return { ...state, scientistName: action.name };
         case 'SET_REPORT_CONTENT':

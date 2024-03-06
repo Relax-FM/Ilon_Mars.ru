@@ -1,24 +1,23 @@
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
 import "./Home.css";
 import { useDispatch, useSelector } from 'react-redux';
 import useCurrentTime from "./useCurrentTime";
-import {setMode, setText} from "../../reduxStore/actions";
+import {setMode} from "../../reduxStore/actions";
 
 
 function Home() {
     const dispatch = useDispatch();
+    const text = (isEarth) => isEarth ? 'Земля' : 'Марс' ;
+    const currentPlanet = () => text(mode === 'earth')
+    const nextPlanet = () => text(mode !== 'earth')
     const mode = useSelector(state => state.mode);
-    const text = useSelector(state => state.text);
     const time = useCurrentTime();
 
     const toggleMode = () => {
         if (mode === 'earth') {
             dispatch(setMode('mars'));
-            dispatch(setText('Земля'));
         } else {
             dispatch(setMode('earth'));
-            dispatch(setText('Марс'));
         }
     };
 
@@ -26,12 +25,12 @@ function Home() {
         <div className={`page ${mode}`}>
             <div className="page__header">
                 <h1 className="page__title">
-                    {text + ". "}
+                    {currentPlanet() + ". "}
                     Наука. Будущее.
                 </h1>
             </div>
             <div className="page__body info">
-                <button className="no-button info-planet" onClick={toggleMode} data-planet={text}>
+                <button className="no-button info-planet" onClick={toggleMode} data-planet={nextPlanet()}>
                 </button>
                 <Link to="/auth">
                     <button className="no-button info-btn">
