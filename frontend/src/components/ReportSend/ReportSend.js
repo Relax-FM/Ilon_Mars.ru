@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
+import './ReportSend.css';
 
 const ReportSend = () => {
     const [scientistName, setScientistName] = useState('');
