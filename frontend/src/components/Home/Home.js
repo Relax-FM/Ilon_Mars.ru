@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import "./Home.css";
 import { useDispatch, useSelector } from 'react-redux';
-import useCurrentTime from "./useCurrentTime";
+import useCurrentTime from "../useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
 import PageLoading from "../PageLoading";
 import RightButton from "../RightButton";
@@ -9,6 +9,7 @@ import LeftButton from "../LeftButton";
 import Column from "../Column/Column";
 import Row from "../Row/Row";
 
+// TODO rename to InitialPage
 
 function Home() {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function Home() {
             </div>
             <Column className="page__body">
                 <LeftButton onClick={toggleMode} data={nextPlanet()} />
-                <Link to="/auth">
+                <Link to="/authorise">
                     <button className="no-button column-btn">
                         Авторизация
                     </button>
