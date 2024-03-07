@@ -10,7 +10,7 @@ import Column from "../Column/Column";
 import Row from "../Row/Row";
 
 // TODO rename to InitialPage
-
+//TODO change names vice-versa of components Row and Column
 function Home() {
     const dispatch = useDispatch();
     const text = (isEarth) => isEarth ? 'Земля' : 'Марс' ;

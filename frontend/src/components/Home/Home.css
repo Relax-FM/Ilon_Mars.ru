@@ -77,10 +77,6 @@
     /*button animation */
     transition: all 0.2s ease-in-out;
 }
-.page__body {
-    margin-bottom: 8%;
-    width: 90%;
-}
 
 .column-btn:hover{
     transform: scale(1.05);
@@ -88,4 +84,8 @@
 
 .column-btn:active {
     transform: scale(0.9);
+}
+.page__body {
+    margin-bottom: 6%;
+    width: 90%;
 }

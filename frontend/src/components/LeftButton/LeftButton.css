@@ -27,10 +27,3 @@ button.left-button {
     position: relative;
     transition: all 0.2s ease-in-out;
 }
-
-.hoverable:hover  {
-    transform: scale(1.05);
-}
-.hoverable:active  {
-    transform: scale(0.9);
-}
