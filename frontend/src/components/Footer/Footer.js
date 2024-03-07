@@ -18,7 +18,7 @@ function Footer() {
             <Link to={"/notification"} className={"hoverable"}>
                 <p>Уведомления</p>
             </Link>
-            <RightButton data={"ЗАГЛУШКА"} />
+            <RightButton data={"ЗАГЛУШКА"} white={true}/>
         </Column>
     )
 }

@@ -30,8 +30,8 @@
     width: 873px;
     height: 169px;
 }
-.main__header,
-.main__temp_class{
+.main__schedule,
+.main__header {
     align-self: flex-start;
     margin-left: 5%;
 }

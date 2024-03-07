@@ -1,12 +1,13 @@
 import "./RightButton.css"
 
-function RightButton({onClick, children, data, className, disabled}) {
+function RightButton({onClick, children, data, className, disabled, white}) {
     className = className ? className : '';
     if (!disabled) {
         className+= " hoverable"
     }
+    const buttonStyle = white ? {backgroundColor: 'white', border: "none"} : {};
     return (
-        <button className={`right-button ${className.trim()}`.trim()} onClick={onClick} data-right-button={data}>
+        <button style={buttonStyle} className={`right-button ${className.trim()}`.trim()} onClick={onClick} data-right-button={data}>
             {children}
         </button>
     );
