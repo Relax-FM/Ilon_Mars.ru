@@ -1,12 +1,15 @@
 import {Link} from "react-router-dom";
-import "./Home.css";
-import { useDispatch, useSelector } from 'react-redux';
-import useCurrentTime from "./useCurrentTime";
+import "./InitialPage.css";
+import {useDispatch, useSelector} from 'react-redux';
+import useCurrentTime from "../../components/useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
-import PageLoading from "../PageLoading";
+import LoadingPage from "../LoadingPage";
+import RightButton from "../../components/RightButton";
+import LeftButton from "../../components/LeftButton";
+import Row from "../../components/Row/Row";
+import Column from "../../components/Column/Column";
 
-
-function Home() {
+function InitialPage() {
     const dispatch = useDispatch();
     const text = (isEarth) => isEarth ? 'Земля' : 'Марс' ;
     const currentPlanet = () => text(mode === 'earth')
@@ -25,31 +28,30 @@ function Home() {
     };
     if (isLoading) {
         return (
-            <PageLoading/>
+            <LoadingPage/>
         );
     }
 
     return (
-        <div className={`page page-${mode}`}>
+        <Column className={`page page-${mode}`}>
             <div className="page__header">
                 <h1 className="page__title">
                     {currentPlanet() + ". "}
                     Наука. Будущее.
                 </h1>
             </div>
-            <div className="page__body info">
-                <button className="no-button info-planet" onClick={toggleMode} data-planet={nextPlanet()}>
-                </button>
-                <Link to="/auth">
-                    <button className="no-button info-btn">
+            <Row className="page__body">
+                <LeftButton onClick={toggleMode} data={nextPlanet()} />
+                <Link to="/authorise">
+                    <button className="no-button column-btn">
                         Авторизация
                     </button>
                 </Link>
-                <button className="no-button info-time" data-time={time}></button>
-            </div>
-        </div>
+                <RightButton data={time} disabled={true} />
+            </Row>
+        </Column>
     );
 }
-// TODO: fix bugs:info-time can have 'PM' and wrapped
+// TODO: fix bugs:column-time can have 'PM' and wrapped
 
-export default Home;
+export default InitialPage;

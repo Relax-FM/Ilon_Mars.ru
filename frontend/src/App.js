@@ -1,16 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 import {Route, Routes} from "react-router-dom";
-import Home from "./components/Home"
-import ReportSend from "./components/ReportSend";
-import ReportView from "./components/ReportView";
+import InitialPage from "./pages/InitialPage"
+import ReportSend from "./pages/ReportSend";
+import ReportView from "./pages/ReportView";
+import MainPage from "./pages/MainPage";
+import Notification from "./pages/Notification";
 
 
 function App() {
   return (
     <div className={"App"}>
         <Routes>
-            <Route path={"/"} element={<Home/>} />
+            <Route path={"/"} element={<InitialPage/>} />
+            <Route path={"/main"} element={<MainPage/>} />
+            <Route path={"/notification"} element={<Notification/>} />
             <Route path={"/send-report"} element={<ReportSend/>} />
             <Route path={"/view-report"} element={<ReportView/>} />
         </Routes>

@@ -3,8 +3,8 @@ export const setMode = (mode) => ({
     mode,
 });
 
-export const setScientistName = (name) => ({
-    type: 'SET_SCIENTIST_NAME',
+export const setUserName = (name) => ({
+    type: 'SET_USER_NAME',
     name,
 });
 

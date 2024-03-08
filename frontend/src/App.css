@@ -1,0 +1,6 @@
+.hoverable:hover  {
+    transform: scale(1.05);
+}
+.hoverable:active  {
+    transform: scale(0.9);
+}
