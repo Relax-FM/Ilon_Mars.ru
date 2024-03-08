@@ -1,9 +1,10 @@
-import  "./Row.css";
+import "./Row.css";
 
-function Row(props) {
+function Row({className, children}) {
+    className = className || "";
     return (
-        <div className={`row ${props.className}`.trim()}>
-            {props.children}
+        <div className={`row ${className}`.trim()}>
+            {children}
         </div>
     )
 }

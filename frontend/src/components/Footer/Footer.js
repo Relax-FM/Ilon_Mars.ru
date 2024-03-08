@@ -1,14 +1,13 @@
 import "./Footer.css";
 import RightButton from "../RightButton";
-import Column from "../Column/Column";
+import Row from "../Row/Row";
 import {Link} from "react-router-dom";
-import Row from "../Row";
 
 // TODO make footer and navbar margins as variables in css
 
-function Footer() {
+function Footer({userName}) {
     return (
-        <Column className="footer">
+        <Row className="footer">
             <Link to={"/main"} className={"hoverable"}>
                 <p>Главное меню</p>
             </Link>
@@ -18,8 +17,8 @@ function Footer() {
             <Link to={"/notification"} className={"hoverable"}>
                 <p>Уведомления</p>
             </Link>
-            <RightButton data={"ЗАГЛУШКА"} white={true}/>
-        </Column>
+            <RightButton data={userName} white={true}/>
+        </Row>
     )
 }
 

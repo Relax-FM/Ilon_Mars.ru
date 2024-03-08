@@ -1,17 +1,15 @@
 import {Link} from "react-router-dom";
-import "./Home.css";
-import { useDispatch, useSelector } from 'react-redux';
-import useCurrentTime from "../useCurrentTime";
+import "./InitialPage.css";
+import {useDispatch, useSelector} from 'react-redux';
+import useCurrentTime from "../../components/useCurrentTime";
 import {setMode} from "../../reduxStore/actions";
-import PageLoading from "../PageLoading";
-import RightButton from "../RightButton";
-import LeftButton from "../LeftButton";
-import Column from "../Column/Column";
-import Row from "../Row/Row";
+import LoadingPage from "../LoadingPage";
+import RightButton from "../../components/RightButton";
+import LeftButton from "../../components/LeftButton";
+import Row from "../../components/Row/Row";
+import Column from "../../components/Column/Column";
 
-// TODO rename to InitialPage
-//TODO change names vice-versa of components Row and Column
-function Home() {
+function InitialPage() {
     const dispatch = useDispatch();
     const text = (isEarth) => isEarth ? 'Земля' : 'Марс' ;
     const currentPlanet = () => text(mode === 'earth')
@@ -30,19 +28,19 @@ function Home() {
     };
     if (isLoading) {
         return (
-            <PageLoading/>
+            <LoadingPage/>
         );
     }
 
     return (
-        <Row className={`page page-${mode}`}>
+        <Column className={`page page-${mode}`}>
             <div className="page__header">
                 <h1 className="page__title">
                     {currentPlanet() + ". "}
                     Наука. Будущее.
                 </h1>
             </div>
-            <Column className="page__body">
+            <Row className="page__body">
                 <LeftButton onClick={toggleMode} data={nextPlanet()} />
                 <Link to="/authorise">
                     <button className="no-button column-btn">
@@ -50,10 +48,10 @@ function Home() {
                     </button>
                 </Link>
                 <RightButton data={time} disabled={true} />
-            </Column>
-        </Row>
+            </Row>
+        </Column>
     );
 }
 // TODO: fix bugs:column-time can have 'PM' and wrapped
 
-export default Home;
+export default InitialPage;

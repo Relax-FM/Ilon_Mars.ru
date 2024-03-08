@@ -1,5 +1,10 @@
 .column {
+    background-color: var(--main-color);
+    height: 100vh;
+    color: var(--secondary-color);
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    gap:18%;
+    z-index: 2;
 }

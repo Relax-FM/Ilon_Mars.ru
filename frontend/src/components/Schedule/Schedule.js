@@ -1,16 +1,29 @@
 import "./Schedule.css";
+import Row from "../Row/Row";
+import Column from "../Column";
+
 function Schedule({periods, className}) {
     className = className || "";
 
+
     return (
-        <div className={`${className} schedule`}>
-            <span className={"schedule__title"}>БЛИЖАЙШИЕ СОЕДИНЕНИЯ</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
-                <path d="M1.84148 7.23395L16 7.23395" stroke="white" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round"/>
-                <path d="M8.92074 0.99997L16 7.23497L8.92074 13.47" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <p>ЗАГЛУШКА</p>
-        </div>
+        <Column className={`${className} schedule`}>
+            <Row>
+                <span className={"schedule__title"}>БЛИЖАЙШИЕ СОЕДИНЕНИЯ</span>
+            </Row>
+            {periods.map((period, index) => { return (
+                <div key={index} className={"schedule__period period"}>
+                    <span className={"period__date"}>{period.fromDate} </span>
+                    <span className={"period__time"}>{period.fromTime} — </span>
+                    {period.toDate && (
+                        <span className={"period__date"}>{period.toDate} </span>
+                    )}
+                    <span className={"period__time"}>{period.toTime}</span>
+                </div>
+            )}
+            )}
+        </Column>
     )
 }
+
 export default Schedule;

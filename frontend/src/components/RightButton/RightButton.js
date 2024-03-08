@@ -5,7 +5,7 @@ function RightButton({onClick, children, data, className, disabled, white}) {
     if (!disabled) {
         className+= " hoverable"
     }
-    const buttonStyle = white ? {backgroundColor: 'white', border: "none"} : {};
+    const buttonStyle = white ? {backgroundColor: 'white'} : {};
     return (
         <button style={buttonStyle} className={`right-button ${className.trim()}`.trim()} onClick={onClick} data-right-button={data}>
             {children}
