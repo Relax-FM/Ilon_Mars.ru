@@ -1,12 +1,12 @@
 /* unset button styles*/
-button.right-button {
+button.right-button-small {
     border: none;
     background-color: inherit;
     color: inherit;
     outline: inherit;
 }
 
-button.right-button::before {
+button.right-button-small::before {
     content:  attr(data-right-button);
     text-align: center;
     /*font-family: var(--main-font);*/
@@ -15,15 +15,14 @@ button.right-button::before {
     position: absolute;
     right: 140%;
 }
-button.right-button {
+button.right-button-small {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    border: 2px solid var(--border-color);
+    background-color: white;
     border-radius: 50%;
-    width: var(--circle-width);
-    height:var(--circle-height);
+    width: var(--circle-width-small);
+    height:var(--circle-height-small);
     position: relative;
     transition: all 0.2s ease-in-out;
 }

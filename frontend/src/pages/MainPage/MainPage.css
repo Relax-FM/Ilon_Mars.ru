@@ -20,6 +20,22 @@
     transform: rotate(-100deg);
     transition: all 0.5s ease;
 }
+.main-earth::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+    background-size: 100%;
+    background-image: url("../../../public/pics/main_earth.png");
+    height: 150%;
+    transform: rotate(-100deg);
+    transition: all 0.5s ease;
+}
 /*TODO move margin-left somewhere above*/
 .main__title {
     font-size: 68px;

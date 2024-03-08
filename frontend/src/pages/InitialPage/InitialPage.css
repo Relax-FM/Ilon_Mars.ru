@@ -10,6 +10,8 @@
     --btn-height: 50px;
     --circle-width: 50px;
     --circle-height: 50px;
+    --circle-width-small: 41px;
+    --circle-height-small: 41px;
     --btn-border-radius: 25px;
 }
 /*TODO: replace 1048 with something adaptive*/

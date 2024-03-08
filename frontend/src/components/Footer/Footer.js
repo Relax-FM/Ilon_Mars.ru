@@ -1,7 +1,7 @@
 import "./Footer.css";
-import RightButton from "../RightButton";
 import Row from "../Row/Row";
 import {Link} from "react-router-dom";
+import RightButtonSmall from "../RightButtonSmall";
 
 // TODO make footer and navbar margins as variables in css
 
@@ -17,7 +17,7 @@ function Footer({userName}) {
             <Link to={"/notification"} className={"hoverable"}>
                 <p>Уведомления</p>
             </Link>
-            <RightButton data={userName} white={true}/>
+            <RightButtonSmall data={userName} white={true}/>
         </Row>
     )
 }

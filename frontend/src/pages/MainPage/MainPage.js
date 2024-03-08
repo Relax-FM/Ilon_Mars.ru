@@ -8,8 +8,7 @@ import {useSelector} from "react-redux";
 
 // TODO fix className logic in different files
 function MainPage() {
-    // const mode = useSelector(state => state.mode);
-    const mode = "mars"
+    const mode = useSelector(state => state.mode);
     const [periods, setPeriods] = useState([])
     const userName = useSelector(state => state.userName);
 
