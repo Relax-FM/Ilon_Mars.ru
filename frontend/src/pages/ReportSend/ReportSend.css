@@ -1,0 +1,14 @@
+.sender {
+    gap: unset;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.sender-mars {
+    background-image: url("../../../public/pics/sender_mars.jpg");
+    background-size: cover;
+}
+.sender-earth {
+    background-image: url("../../../public/pics/sender-earth.jpg");
+    background-size: cover;
+}
