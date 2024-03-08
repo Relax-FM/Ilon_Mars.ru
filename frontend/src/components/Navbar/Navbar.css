@@ -1,0 +1,13 @@
+.navbar {
+    margin-top: 4%;
+    width: 90%;
+}
+.navbar__title {
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}

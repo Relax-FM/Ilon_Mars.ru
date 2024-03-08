@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: 'RF Dewi', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* unset button styles*/
+.no-button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  outline: inherit;
+}
+.hoverable:hover  {
+  transform: scale(1.05);
+}
+.hoverable:active  {
+  transform: scale(0.9);
+}
