@@ -1,16 +1,16 @@
 import "./ReportFormInputFile.css"
 import Row from "../Row/Row";
-import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {setFile} from "../../reduxStore/actions";
 
 function ReportFormInputFile() {
-    const [fileName, setFileName] = useState("");
-
+    const dispatch = useDispatch();
+    const fileName = useSelector(state => state.file);
+    
     const handleFileChange = (e) => {
-        setFileName(e.target.files[0] ? e.target.files[0].name : '');
+        dispatch(setFile(e.target.files[0].name))
     };
-
-
-
+    
     return (
         <div className="form-file-container">
             <Row>
@@ -26,8 +26,8 @@ function ReportFormInputFile() {
             {fileName && (
                 <Row className="file-info">
                     <span>{fileName}</span>
-                    <button className={"no-button"} onClick={() => setFileName('')}>
-                        <img src={"./pics/trash.png"}/>
+                    <button className={"no-button"} onClick={() => dispatch(setFile(''))}>
+                        <img src={"./pics/trash.png"} alt={""}/>
                     </button>
                 </Row>
             )}
