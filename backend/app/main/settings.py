@@ -14,7 +14,6 @@ SECRET_KEY = 'pw+*a^45y7s_f(im29%4ot2222m1h7zed4w+$03_trf4)0)!l!'
 DEBUG = True
 
 ALLOWED_HOSTS = ['dbms_template_domain', 'localhost', '127.0.0.1', '0.0.0.0', 'nginx']
-PORT = 8001
 
 # Application definition
 
