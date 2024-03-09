@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -63,14 +64,15 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_name',
-        'USER': 'dbms',
-        'PASSWORD': 'db_password',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ilonmars',
+        'USER': 'postgres',
+        'PASSWORD': '03795',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432'
     }
 }
+
 
 
 # Password validation
