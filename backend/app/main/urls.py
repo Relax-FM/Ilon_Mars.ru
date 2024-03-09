@@ -3,6 +3,9 @@ from django.urls import path, re_path
 from django.conf.urls import include
 from auth.views import *
 
+from django.urls import include
+
+
 def basic(request):
     return "Ilon Mars"
 
@@ -13,4 +16,5 @@ urlpatterns = [
     re_path('api/login/', mylogin),
     re_path('api/signup/', mysignup),
     re_path('api/token/', test_token)
+    path('', include('schedule.urls')),
 ]

@@ -15,6 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['dbms_template_domain', 'localhost', '127.0.0.1', '0.0.0.0', 'nginx']
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
+    'schedule.apps.ScheduleConfig',
 ]
 
 MIDDLEWARE = [
@@ -67,11 +69,11 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ilonmars',
-        'USER': 'postgres',
-        'PASSWORD': '89161996115ve4NO',
+        'NAME': 'db_name',
+        'USER': 'dbms',
+        'PASSWORD': 'db_password',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '',
     }
 }
 
@@ -100,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe\Moscow'
 
 USE_I18N = True
 
