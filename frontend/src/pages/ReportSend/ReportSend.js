@@ -48,7 +48,7 @@ const ReportSend = () => {
                     <ReportFormInput className={"report-form-input"} value={userName}/>
                    <Row className={"report-form-row"}>
                        <ReportFormTextarea className={"report-form-textarea"} />
-                       <div className={"report-form-column"}>
+                       <div className={"report-form-column-right"}>
                            <ReportFormInputFile/>
                            <ReportFormButton />
                        </div>

@@ -7,8 +7,10 @@
 .form-file-container {
     width: 25.8125rem;
     height: 7.125rem;
-    flex-shrink: 0;
+    /*flex-basis: auto;*/
     padding: 3% 5%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .form-file-container svg {
     border-radius: 2.375rem;
@@ -21,4 +23,21 @@
     font-weight: 700;
     line-height: 142.857%;
     text-transform: uppercase;
+}
+#input-file {
+    display: none;
+}
+.file-info img {
+    width: 16.792px;
+    height: 15px;
+}
+.file-info button {
+    align-self: start;
+}
+.file-info {
+    padding-top: 1.5%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: unset;
+    line-height: normal;
 }

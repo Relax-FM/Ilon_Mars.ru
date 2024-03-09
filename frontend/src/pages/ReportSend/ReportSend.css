@@ -3,7 +3,6 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-    /*align-items: flex-start;*/
 }
 .sender-mars {
     background-image: url("../../../public/pics/sender_mars.jpg");
@@ -26,12 +25,6 @@
 .report-form-input {
     align-self: flex-start;
 }
-.report-form-column {
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
-    flex-grow: 1;
-}
 .sender__body {
     display: flex;
     flex-direction: column;
@@ -41,5 +34,13 @@
 }
 .report-form-row {
     gap: 2%;
-    align-items: flex-end;
+}
+.report-form-column, .report-form-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    flex-grow: 1;
+}
+.report-form-column-right  {
+    justify-content: end;
 }

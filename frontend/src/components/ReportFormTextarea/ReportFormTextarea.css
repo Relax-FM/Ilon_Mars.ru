@@ -9,6 +9,7 @@
     backdrop-filter: blur(8px);
     padding: 3% 2%;
 }
+
 .form-textarea {
     background-color: unset;
     color: white;

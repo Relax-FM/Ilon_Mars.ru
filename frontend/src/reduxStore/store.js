@@ -3,7 +3,7 @@ import {createStore} from 'redux';
 
 const initialState = {
     mode: 'earth',
-    userName: 'ЗАГЛУШКА_2',
+    userName: 'Господин Эдуард',
     reportContent: '',
     file: null,
     isLoading: true,
