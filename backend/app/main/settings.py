@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'report',
     'user',
 
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -67,15 +69,14 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ilonmars',
         'USER': 'postgres',
         'PASSWORD': '03795',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5432',
     }
 }
-
 
 
 # Password validation
