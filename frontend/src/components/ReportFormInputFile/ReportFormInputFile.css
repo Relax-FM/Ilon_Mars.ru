@@ -5,9 +5,8 @@
     backdrop-filter: blur(8px);
 }
 .form-file-container {
-    width: 25.8125rem;
-    height: 7.125rem;
-    /*flex-basis: auto;*/
+    width: 25vw;
+    flex-basis: 11vh;
     padding: 3% 5%;
     box-sizing: border-box;
     overflow: hidden;
@@ -40,4 +39,9 @@
     font-style: normal;
     font-weight: unset;
     line-height: normal;
+}
+.file-info span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

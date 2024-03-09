@@ -21,8 +21,8 @@
     line-height: normal;
 }
 .form-textarea {
-    width: 55rem;
-    height: 22.75rem;
+    width:  45vw;
+    height: 30vh;
     resize: none;
 }
 

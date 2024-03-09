@@ -2,7 +2,7 @@
 import {createStore} from 'redux';
 
 const initialState = {
-    mode: 'earth',
+    mode: 'mars',
     userName: 'Господин Эдуард',
     reportContent: '',
     file: null,

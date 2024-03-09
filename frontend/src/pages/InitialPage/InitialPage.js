@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import "./InitialPage.css";
 import {useDispatch, useSelector} from 'react-redux';
 import useCurrentTime from "../../components/useCurrentTime";
-import {setMode} from "../../reduxStore/actions";
+import {setMode} from "../../redux/actions";
 import LoadingPage from "../LoadingPage";
 import RightButton from "../../components/RightButton";
 import LeftButton from "../../components/LeftButton";

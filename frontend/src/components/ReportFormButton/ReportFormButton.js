@@ -1,8 +1,8 @@
 import "./ReportFormButton.css"
 
-function  ReportFormButton() {
+function  ReportFormButton({action}) {
     return (
-        <button className={"report-form-button hoverable"} type="submit">Отправить</button>
+        <button className={"report-form-button hoverable"} type="submit" onClick={action}>Отправить</button>
     )
 }
 export default ReportFormButton;
