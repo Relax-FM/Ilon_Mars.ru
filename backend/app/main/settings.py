@@ -26,6 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    'report.apps.ReportConfig',
+    'user.apps.UserConfig',
     'schedule.apps.ScheduleConfig',
 ]
 
@@ -66,10 +69,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'huita',
-        'USER': 'Umalat-chushka',
-        'PASSWORD': 'rubl budet?',
-        'HOST': '127.0.0.1',
+        'NAME': 'ilon-mars',
+        'USER': 'gasanov',
+        'PASSWORD': 'gosha_lev',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
