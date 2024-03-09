@@ -6,7 +6,7 @@ from rest_framework import status
 
 
 # Create your views here.
-@api_view(['GET','POST'])
+@api_view(['GET', 'POST'])
 def schedules(request):
     if request.method == 'GET':
         schedules = Schedule.objects.all()
@@ -14,8 +14,16 @@ def schedules(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        serializer = ScheduleSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        requests = request.data
+        for req in requests:
+            req['start_time'] = req.pop('from')
+            req['end_time'] = req.pop('to')
+
+        for req in requests:
+            serializer = ScheduleSerializer(data=req)
+            if serializer.is_valid():
+                serializer.save()
+            else:
+                print('Bad req')
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
