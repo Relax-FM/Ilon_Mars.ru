@@ -6,7 +6,7 @@ from rest_framework import status
 
 
 # Create your views here.
-@api_view(['GET','POST'])
+@api_view(['GET', 'POST'])
 def schedules(request):
     if request.method == 'GET':
         schedules = Schedule.objects.all()
