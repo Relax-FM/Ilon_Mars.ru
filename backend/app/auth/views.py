@@ -1,5 +1,5 @@
 from django.contrib.auth import logout, login
-from serializers import UserSerializer
+from auth.serializers import UserSerializer
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
