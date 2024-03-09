@@ -6,7 +6,7 @@ import useCurrentTime from "../useCurrentTime";
 function Navbar() {
     const time = useCurrentTime();
     return (
-        <Row className="navbar">
+        <Row className="navbar adaptive-width">
             <h1 className={"navbar__title"}>AtomStar</h1>
             <RightButton data={time} disabled={true}/>
         </Row>

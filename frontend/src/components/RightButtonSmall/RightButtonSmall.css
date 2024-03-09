@@ -3,7 +3,6 @@ button.right-button-small {
     border: none;
     background-color: inherit;
     color: inherit;
-    outline: inherit;
 }
 
 button.right-button-small::before {
