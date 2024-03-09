@@ -20,6 +20,6 @@ urlpatterns = [
     re_path('api/login/', mylogin),
     re_path('api/signup/', mysignup),
     re_path('api/token/', test_token),
-    path('report/get_report', get_report),
-    path('user/new_scientist', new_scientist),
+    path('api/report/get_report', get_report),
+    path('api/user/new_scientist', new_scientist),
 ]
