@@ -14,7 +14,7 @@ def basic(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', basic),
+    #path('/', basic),
     path('report/get_report', get_report),
     path('user/new_scientist', new_scientist)
 ]
