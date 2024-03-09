@@ -1,0 +1,24 @@
+.form-file-container {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+.form-file-container {
+    width: 25.8125rem;
+    height: 7.125rem;
+    flex-shrink: 0;
+    padding: 3% 5%;
+}
+.form-file-container svg {
+    border-radius: 2.375rem;
+    background: #FFF;
+}
+.form-file-container label {
+    color: #FFF;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 142.857%;
+    text-transform: uppercase;
+}

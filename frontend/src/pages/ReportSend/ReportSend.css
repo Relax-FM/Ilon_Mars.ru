@@ -3,6 +3,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    /*align-items: flex-start;*/
 }
 .sender-mars {
     background-image: url("../../../public/pics/sender_mars.jpg");
@@ -11,4 +12,34 @@
 .sender-earth {
     background-image: url("../../../public/pics/sender-earth.jpg");
     background-size: cover;
+}
+
+.sender__title {
+    font-size: 4.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    letter-spacing: 0.375rem;
+    text-transform: uppercase;
+}
+
+.report-form-input {
+    align-self: flex-start;
+}
+.report-form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    flex-grow: 1;
+}
+.sender__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5%;
+    flex-grow: 1;
+}
+.report-form-row {
+    gap: 2%;
+    align-items: flex-end;
 }

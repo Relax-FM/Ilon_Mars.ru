@@ -40,7 +40,7 @@ function InitialPage() {
                     Наука. Будущее.
                 </h1>
             </div>
-            <Row className="page__body">
+            <Row className="page__body adaptive-width">
                 <LeftButton onClick={toggleMode} data={nextPlanet()} />
                 <Link to="/authorise">
                     <button className="no-button column-btn">
