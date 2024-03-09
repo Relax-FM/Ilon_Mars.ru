@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import "./InitialPage.css";
 import {useDispatch, useSelector} from 'react-redux';
 import useCurrentTime from "../../components/useCurrentTime";
-import {setMode} from "../../reduxStore/actions";
+import {setMode} from "../../redux/actions";
 import LoadingPage from "../LoadingPage";
 import RightButton from "../../components/RightButton";
 import LeftButton from "../../components/LeftButton";
@@ -40,7 +40,7 @@ function InitialPage() {
                     Наука. Будущее.
                 </h1>
             </div>
-            <Row className="page__body">
+            <Row className="page__body adaptive-width">
                 <LeftButton onClick={toggleMode} data={nextPlanet()} />
                 <Link to="/authorise">
                     <button className="no-button column-btn">

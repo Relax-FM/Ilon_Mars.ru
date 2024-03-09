@@ -4,3 +4,6 @@
 .hoverable:active  {
     transform: scale(0.9);
 }
+.adaptive-width {
+    width: 90%;
+}
