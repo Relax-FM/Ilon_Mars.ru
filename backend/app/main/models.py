@@ -26,3 +26,4 @@
 #     character_count_max = models.IntegerField()
 #     character_count_sent = models.IntegerField()
 #     absolut_path = models.CharField(max_length=255)
+

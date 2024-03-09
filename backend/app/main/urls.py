@@ -7,6 +7,8 @@ from report.views import get_report
 
 from user.views import new_scientist
 
+from auth.views import mylogin, test_token, mysignup
+
 
 def basic(request):
     return "Ilon Mars"
@@ -17,7 +19,7 @@ urlpatterns = [
     #path('/', basic),
     re_path('api/login/', mylogin),
     re_path('api/signup/', mysignup),
-    re_path('api/token/', test_token)
+    re_path('api/token/', test_token),
     path('report/get_report', get_report),
-    path('user/new_scientist', new_scientist)
+    path('user/new_scientist', new_scientist),
 ]
