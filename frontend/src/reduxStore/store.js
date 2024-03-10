@@ -1,9 +1,9 @@
 // store.js
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 
 const initialState = {
     mode: 'earth',
-    scientistName: '',
+    userName: 'ЗАГЛУШКА_2',
     reportContent: '',
     file: null,
     isLoading: true,
@@ -13,8 +13,8 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_MODE':
             return { ...state, mode: action.mode };
-        case 'SET_SCIENTIST_NAME':
-            return { ...state, scientistName: action.name };
+        case 'SET_USER_NAME':
+            return { ...state, userName: action.name };
         case 'SET_REPORT_CONTENT':
             return { ...state, reportContent: action.content };
         case 'SET_FILE':

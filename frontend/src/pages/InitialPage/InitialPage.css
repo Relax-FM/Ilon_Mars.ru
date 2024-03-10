@@ -10,17 +10,9 @@
     --btn-height: 50px;
     --circle-width: 50px;
     --circle-height: 50px;
+    --circle-width-small: 41px;
+    --circle-height-small: 41px;
     --btn-border-radius: 25px;
-}
-.page {
-    background-color: var(--main-color);
-    height: 100vh;
-    color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:18%;
-    z-index: 2;
 }
 /*TODO: replace 1048 with something adaptive*/
 .page__header {
@@ -73,23 +65,10 @@
     background-image: url("../../../public/pics/main_mars.png");
 }
 
-.info {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin-bottom: 8%;
-}
-
-.info-btn,
-.info-planet::after,
-.info-time::before {
+.column-btn {
     text-align: center;
     /*font-family: var(--main-font);*/
     font-size: var(--main-font-size);
-    font-weight: var(--main-font-weight);
-}
-
-.info-btn {
     text-transform: uppercase;
     width: var(--btn-width);
     height: var(--btn-height);
@@ -97,44 +76,18 @@
     background-color: var(--secondary-color);
     border-radius: var(--btn-border-radius);
     color: var(--main-color);
-}
-
-.info-planet,
-.info-time {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: var(--circle-width);
-    height:var(--circle-height);
-    position: relative;
-}
-.info-planet::after {
-    content: attr(data-planet);
-    position: absolute;
-    left: 140%;
-}
-
-.info-time::before {
-    content:  attr(data-time);
-    position: absolute;
-    right: 140%;
-}
-
-/*button animation */
-.info-btn,
-.info-planet {
+    /*button animation */
     transition: all 0.2s ease-in-out;
 }
 
-.info-btn:hover,
-.info-planet:hover {
+.column-btn:hover{
     transform: scale(1.05);
 }
 
-.info-btn:active,
-.info-planet:active {
+.column-btn:active {
     transform: scale(0.9);
+}
+.page__body {
+    margin-bottom: 6%;
+    width: 90%;
 }
