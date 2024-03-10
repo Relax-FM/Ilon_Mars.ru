@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
-    'auth.apps.AuthConfig',
 ]
 
 MIDDLEWARE = [
