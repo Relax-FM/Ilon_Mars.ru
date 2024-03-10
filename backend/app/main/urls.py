@@ -12,5 +12,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authapi.urls')),
     path('', include('schedule.urls')),
+    path('', include('report.urls')),
     path('', basic),
 ]
