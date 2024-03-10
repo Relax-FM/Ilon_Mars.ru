@@ -25,6 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'report.apps.ReportConfig',
+    'user.apps.UserConfig',
+    'authapi.apps.AuthapiConfig',
 ]
 
 MIDDLEWARE = [
@@ -66,9 +71,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ilonmars',
         'USER': 'postgres',
-        'PASSWORD': '03795',
+        'PASSWORD': '89161996115ve4NO',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
