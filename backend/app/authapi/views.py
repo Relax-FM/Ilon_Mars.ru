@@ -25,7 +25,7 @@ def mylogin(request):
 
 
 @api_view(['POST'])
-def mysignup(request):
+def get_scientist(request):
     userdata = {"username": request.data['username'],
                 "password": request.data['password'],
                 "email": request.data['email']}
@@ -51,12 +51,17 @@ def mysignup(request):
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44ac8c6d76c312735fa7ebfbbb0255dbdf519a97
 @api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def test_token(request):
     print(request.session.session_key)
     return Response("passed for {}".format(request.user.email))
+<<<<<<< HEAD
 
 
 test_path_to = r'C:\Users\relax_fm\Downloads\Telegram Desktop\periods.json'
@@ -82,3 +87,5 @@ def test_send(request):
     else:
         print('Возникла ошибка при отправке сообщения')
     return Response({}, status=status.HTTP_200_OK)
+=======
+>>>>>>> 44ac8c6d76c312735fa7ebfbbb0255dbdf519a97
