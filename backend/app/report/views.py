@@ -20,6 +20,7 @@ def get_report(request):
         'max_size': 500,
         'received_size': 0
     }
+
     print('tut3')
     form = InReportSerializer(formdata, request.FILES)
     print('tut2')
