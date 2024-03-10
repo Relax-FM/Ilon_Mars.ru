@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
     'schedule.apps.ScheduleConfig',
+    'authapi.apps.AuthapiConfig',
 ]
 
 MIDDLEWARE = [

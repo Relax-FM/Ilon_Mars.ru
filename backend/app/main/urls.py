@@ -10,7 +10,7 @@ def basic(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('auth.urls')),
+    path('', include('authapi.urls')),
     path('', include('schedule.urls')),
     path('', basic),
 ]

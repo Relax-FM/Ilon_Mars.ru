@@ -1,5 +1,11 @@
 from rest_framework import serializers
+from .models import Scientist
 from django.contrib.auth.models import User
+
+class ScientistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Scientist
+        fields = ['user', 'name', 'surname', 'planet']
 
 
 # Умалат - чурка
