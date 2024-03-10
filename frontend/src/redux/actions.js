@@ -22,3 +22,9 @@ export const setLoading = (loading) => ({
     type: 'SET_LOADING',
     loading,
 });
+
+export const setToken = (token) => ({
+    type: 'SET_TOKEN',
+    token,
+});
+
