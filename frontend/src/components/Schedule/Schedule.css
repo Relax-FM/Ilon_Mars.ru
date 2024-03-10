@@ -1,0 +1,36 @@
+.schedule {
+    justify-content: flex-start;
+    gap: unset;
+    height: unset;
+    align-items: unset;
+    min-width: 27%;
+}
+
+.schedule {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 1.5%;
+}
+
+.schedule__title {
+    font-size: 0.875rem;
+    font-weight: 900;
+    line-height: 142.857%;
+    padding-bottom: 5%;
+
+    text-transform: uppercase;
+}
+.schedule__period {
+    padding: 3% 0;
+    font-size: 0.675rem;
+    border-bottom: 2px solid white;
+}
+.schedule__period:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.period__time {
+    color: grey;
+}

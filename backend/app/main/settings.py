@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
     'authapi.apps.AuthapiConfig',
+    'schedule.apps.ScheduleConfig',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'main.wsgi.application'
+WSGI_APPLICATION = "main.wsgi.application"
 
 
 # Database
@@ -102,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
