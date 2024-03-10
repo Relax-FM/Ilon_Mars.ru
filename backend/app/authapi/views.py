@@ -25,7 +25,7 @@ def mylogin(request):
 
 
 @api_view(['POST'])
-def mysignup(request):
+def get_scientist(request):
     userdata = {"username": request.data['username'],
                 "password": request.data['password'],
                 "email": request.data['email']}
@@ -51,34 +51,10 @@ def mysignup(request):
 
 
 
+
 @api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def test_token(request):
     print(request.session.session_key)
     return Response("passed for {}".format(request.user.email))
-
-
-test_path_to = r'C:\Users\relax_fm\Downloads\Telegram Desktop\periods.json'
-import json
-import requests as rq
-
-def test_send(request):
-    with open(test_path_to, 'r') as file:
-        data = json.load(file)
-    # print(data)
-    url = 'http://127.0.0.1:8001/schedule/'
-
-    # datalist = []
-    # datalist.append(data)
-    headers = {
-        'Content-Type': 'application/json'
-    }
-    print(data)
-    response = rq.post(url, headers=headers, data=json.dumps(data))  # TODO: Дописать обработчик расписания и отправки.
-
-    if response.status_code == 200:
-        print('Сообщение успешно отправлено на другой сервер')
-    else:
-        print('Возникла ошибка при отправке сообщения')
-    return Response({}, status=status.HTTP_200_OK)
