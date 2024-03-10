@@ -3,9 +3,13 @@ from .serializer import ScheduleSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+import json
+import requests as rq
+
+sending_url = 'http://127.0.0.1:8000/'
+headers = {'Content-Type': 'application/json'}
 
 
-# Create your views here.
 @api_view(['GET', 'POST'])
 def schedules(request):
     if request.method == 'GET':
@@ -26,4 +30,11 @@ def schedules(request):
             else:
                 print('Bad request')
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        url = sending_url + 'schedule/'
+        response = rq.post(url, headers=headers, data=json.dumps(requests))  # TODO: Дописать обработчик расписания и отправки.
+        if response.status_code == 201:
+            print('Сообщение успешно отправлено на другой сервер')
+        else:
+            print('Возникла ошибка при отправке сообщения')
         return Response(serializer.data, status=status.HTTP_201_CREATED)
