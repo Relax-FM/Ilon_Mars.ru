@@ -10,6 +10,7 @@ import ReportFormInputFile from "../../components/ReportFormInputFile";
 import ReportFormButton from "../../components/ReportFormButton";
 import Row from "../../components/Row/Row";
 import {setLoading} from "../../redux/actions";
+import {useNavigate} from "react-router-dom";
 // import axios from 'axios';
 // TODO make main-earth and main-mars and sender-earth and sender-mars and page-earth and page-mars as components
 const ReportSend = () => {
@@ -18,6 +19,10 @@ const ReportSend = () => {
     const dispatch = useDispatch()
     const file = useSelector(state => state.file);
     const reportContent = useSelector(state => state.reportContent)
+    const token = useSelector(state => state.token);
+    const navigate = useNavigate();
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         dispatch(setLoading(true))
@@ -45,6 +50,10 @@ const ReportSend = () => {
             dispatch(setLoading(false))
         }
     };
+
+
+    if (!token)
+        navigate("/authorise")
 
     // const handleFileChange = (event) => {
     //     setFile(event.target.files[0]);

@@ -5,13 +5,15 @@ import Column from "../../components/Column";
 import {useEffect, useState} from "react";
 import Schedule from "../../components/Schedule"
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 // TODO fix className logic in different files
-//Todo check if is log in
 function MainPage() {
     const mode = useSelector(state => state.mode);
     const [periods, setPeriods] = useState([])
     const userName = useSelector(state => state.userName);
+    const token = useSelector(state => state.token);
+    const navigate = useNavigate();
 
     const filterPeriods = () => {
         const today = new Date();
@@ -56,6 +58,9 @@ function MainPage() {
             console.error(e)
         }
     }, [])
+
+    if (!token)
+        navigate("/authorise")
 
     return (
         <Column className={`main main-${mode}`}>
