@@ -14,9 +14,9 @@ function Footer({userName}) {
             <Link to={"/send-report"} className={"hoverable"}>
                 <p>Создание отчетов</p>
             </Link>
-            <Link to={"/notification"} className={"hoverable"}>
-                <p>Уведомления</p>
-            </Link>
+            {/*<Link to={"/notification"} className={"hoverable"}>*/}
+            {/*    <p>Уведомления</p>*/}
+            {/*</Link>*/}
             <RightButtonSmall data={userName} white={true}/>
         </Row>
     )
