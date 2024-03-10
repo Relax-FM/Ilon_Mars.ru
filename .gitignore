@@ -87,7 +87,6 @@ __pycache__/
 local_settings.py
 
 .env
-migrations
 db.sqlite3
 
 *postgres_data*
