@@ -44,7 +44,7 @@ function MainPage() {
 
     useEffect(() => {
         try {
-            fetch("http://localhost:90/schedule")
+            fetch("/schedule")
                 .then(response => response.json())
                 .then(data => {
                     setPeriods(data)
