@@ -29,8 +29,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
-    'authapi.apps.AuthapiConfig',
     'schedule.apps.ScheduleConfig',
+    'authapi.apps.AuthapiConfig',
 ]
 
 MIDDLEWARE = [

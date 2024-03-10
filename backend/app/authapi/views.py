@@ -9,6 +9,12 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+import requests as rq
+import json
+
+
+sending_url = 'http://127.0.0.1:8000/'
+headers = {'Content-Type': 'application/json'}
 
 
 @api_view(['POST'])
@@ -25,7 +31,7 @@ def mylogin(request):
 
 
 @api_view(['POST'])
-def get_scientist(request):
+def mysignup(request):
     userdata = {"username": request.data['username'],
                 "password": request.data['password'],
                 "email": request.data['email']}
@@ -43,6 +49,13 @@ def get_scientist(request):
         scientistserializer = ScientistSerializer(data=scientistdata)
         if scientistserializer.is_valid():
             scientistserializer.save()
+            url = sending_url + 'api/get_scientist/'
+
+            response = rq.post(url, headers=headers, data=json.dumps(request.data)) # TODO: Дописать обработчик расписания и отправки.
+            if response.status_code == 201:
+                print('Сообщение успешно отправлено на другой сервер')
+            else:
+                print('Возникла ошибка при отправке сообщения')
         else:
             return Response(scientistserializer.errors, status=status.HTTP_400_BAD_REQUEST)
     else:
