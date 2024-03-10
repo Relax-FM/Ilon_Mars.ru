@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include
+from django.urls import path, re_path
+from django.urls import include
 
 
 def basic(request):
@@ -9,5 +9,7 @@ def basic(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', basic),
+    path('', include('authapi.urls')),
+    path('', include('schedule.urls')),
+    path('', basic),
 ]
