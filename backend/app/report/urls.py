@@ -3,6 +3,6 @@ from .views import *
 
 
 urlpatterns = [
-    path('get_report/', get_report),
-    path('send_report/', send_report),
+    # path('get_report/', get_report),
+    # path('send_report/', send_report),
 ]
