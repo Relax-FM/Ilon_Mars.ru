@@ -56,3 +56,9 @@ def get_scientist(request):
 def test_token(request):
     print(request.session.session_key)
     return Response("passed for {}".format(request.user.email))
+
+@api_view(['POST'])
+def test_files(request):
+    print(request.POST)
+    print(request.FILES)
+    return Response("passed for {}", status=status.HTTP_201_CREATED)
