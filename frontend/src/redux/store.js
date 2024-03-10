@@ -2,12 +2,12 @@
 import {createStore} from 'redux';
 
 const initialState = {
-    mode: 'mars',
-    userName: 'Господин Эдуард',
+    mode: 'earth',
+    userName: 'Иван',
     reportContent: '',
     file: null,
     isLoading: true,
-    token: '',
+    token: 'das',
 };
 
 function reducer(state = initialState, action) {
