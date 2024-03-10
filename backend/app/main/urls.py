@@ -29,4 +29,3 @@ urlpatterns = [
     path('api/report/get_report', get_report),
     path('api/user/new_scientist', new_scientist),
 ]
-1
