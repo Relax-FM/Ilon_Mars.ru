@@ -7,6 +7,7 @@ const initialState = {
     reportContent: '',
     file: null,
     isLoading: true,
+    token: '',
 };
 
 function reducer(state = initialState, action) {
@@ -21,6 +22,8 @@ function reducer(state = initialState, action) {
             return { ...state, file: action.file };
         case 'SET_LOADING':
             return { ...state, isLoading: action.loading };
+        case 'SET_TOKEN':
+            return { ...state, token: action.token };
         default:
             return state;
     }
