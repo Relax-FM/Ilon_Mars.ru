@@ -9,3 +9,9 @@ from django.shortcuts import get_object_or_404
 
 # TODO: Нахуярить логику работы с отчетами
 
+def get_report():
+    pass
+
+
+def send_report():
+    pass
