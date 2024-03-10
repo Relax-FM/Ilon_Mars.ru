@@ -31,8 +31,13 @@ const ReportSend = () => {
         }
         try {
             // Замените URL на адрес вашего сервера
-            // await axios.post('https://your-server.com/reports', formData);
-            alert('Отчет успешно отправлен!1212');
+            await fetch('/get_report/', {
+                method: 'POST',
+                body: formData,
+            }).then(async (res) => {
+                console.log(res)
+                console.log(await res.json())
+            });
         } catch (error) {
             console.error('Ошибка при отправке отчета:', error);
             alert('Произошла ошибка при отправке отчета. Пожалуйста, попробуйте еще раз.');
