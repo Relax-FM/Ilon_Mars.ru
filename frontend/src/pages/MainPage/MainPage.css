@@ -43,14 +43,15 @@
     line-height: 125%;
     letter-spacing: 6px;
     text-transform: uppercase;
-    width: 873px;
-    height: 169px;
+    width: 54.5625rem;
+    height: 10.5625rem;
 }
 .main__schedule,
 .main__header {
     align-self: flex-start;
     margin-left: 5%;
 }
+
 .main__schedule {
     align-self: flex-start;
 }

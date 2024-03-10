@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./LoadingPage.css";
 import {useDispatch, useSelector} from "react-redux";
-import {setLoading} from "../../reduxStore/actions";
+import {setLoading} from "../../redux/actions";
 import Column from "../../components/Column";
 
 function LoadingPage() {

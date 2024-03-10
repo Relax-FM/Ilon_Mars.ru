@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'report.apps.ReportConfig',
     'user.apps.UserConfig',
     'schedule.apps.ScheduleConfig',
+    'authapi.apps.AuthapiConfig',
 ]
 
 MIDDLEWARE = [
@@ -60,20 +61,20 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'main.wsgi.application'
+WSGI_APPLICATION = "main.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ilonearth',
-        'USER': 'postgres',
-        'PASSWORD': '03795',
-        'HOST': 'localhost',
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "ilon-earth",
+        "USER": "gasanov",
+        "PASSWORD": "gosha_lev",
+        "HOST": "ilon-earth-db",
+        "PORT": "5432",
     }
 }
 
@@ -102,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe\Moscow'
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
