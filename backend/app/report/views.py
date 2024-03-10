@@ -27,7 +27,8 @@ def get_report(request):
         form.save()
     else:
         print("fuck")
-    return Response({}, status=status.HTTP_201_CREATED)
+        return Response({"sosi hui": 123}, status=status.HTTP_400_BAD_REQUEST)
+    return Response({"ne sosi hui": 12356789}, status=status.HTTP_201_CREATED)
 
 
 
