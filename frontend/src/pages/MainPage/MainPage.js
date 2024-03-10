@@ -7,6 +7,7 @@ import Schedule from "../../components/Schedule"
 import {useSelector} from "react-redux";
 
 // TODO fix className logic in different files
+//Todo check if is log in
 function MainPage() {
     const mode = useSelector(state => state.mode);
     const [periods, setPeriods] = useState([])

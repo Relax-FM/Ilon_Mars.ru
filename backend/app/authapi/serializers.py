@@ -1,6 +1,13 @@
 from rest_framework import serializers
 from .models import Scientist
 from django.contrib.auth.models import User
+from .models import Scientist
+
+
+class ScientistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Scientist
+        fields = ['user', 'name', 'surname', 'planet']
 
 class ScientistSerializer(serializers.ModelSerializer):
     class Meta:
