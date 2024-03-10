@@ -66,9 +66,17 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'db1': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ilonmars',
+        'USER': 'postgres',
+        'PASSWORD': '03795',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+    'db2': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ilonearth',
         'USER': 'postgres',
         'PASSWORD': '03795',
         'HOST': 'localhost',
