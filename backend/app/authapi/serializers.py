@@ -9,11 +9,6 @@ class ScientistSerializer(serializers.ModelSerializer):
         model = Scientist
         fields = ['user', 'name', 'surname', 'planet']
 
-class ScientistSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Scientist
-        fields = ['user', 'name', 'surname', 'planet']
-
 
 # Умалат - чурка
 class UserSerializer(serializers.ModelSerializer):
