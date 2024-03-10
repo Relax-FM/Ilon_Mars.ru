@@ -3,6 +3,6 @@ from .views import *
 
 urlpatterns = [
     path('api/login/', mylogin),
-    path('api/signup/', mysignup),
+    path('api/send_scientist/', mysignup),
     path('api/token/', test_token),
 ]
