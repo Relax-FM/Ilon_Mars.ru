@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': 'ilon-mars',
         'USER': 'gasanov',
         'PASSWORD': 'gosha_lev',
-        'HOST': 'localhost',
+        'HOST': 'ilon-mars-db',
         'PORT': '5432',
     }
 }

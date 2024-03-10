@@ -16,18 +16,19 @@ function MainPage() {
     const filterPeriods = () => {
         const today = new Date();
         // delete old entries
-        setPeriods(periods.filter(period => {
-                const from = new Date(period.from);
-                return from >= today;
+        setPeriods(periods => periods.filter(period => {
+                // select by end_time to access those that are still available
+                const toTime = new Date(period.end_time);
+                return toTime >= today;
             })
         )
     }
     const formattedPeriods = () => {
         setPeriods(periods => periods.map((period) => {
-            const fromDate = new Date(period.from);
-            const toDate = new Date(period.to);
-            const fromDateString = fromDate.toISOString().split('T');
-            const toDateString = toDate.toISOString().split('T');
+            const fromDate = new Date(period.start_time);
+            const toDate = new Date(period.end_time);
+            const fromDateString = fromDate.toLocaleString("ru-Ru").split(", ");
+            const toDateString = toDate.toLocaleString("ru-Ru").split(", ");
 
             // Add the "toDate" only if it's different from the "fromTime"
             const isDateDifferent = (fromDateString[0] !== toDateString[0]);
@@ -42,55 +43,18 @@ function MainPage() {
     };
 
     useEffect(() => {
-        // try {
-        //     const periods  = fetch("http://localhost:3001/api/user", {
-        //             method: "GET",
-        //         }
-        //     ).then(response => response.json())
-        //         .then(data => {
-        //             console.log(data)
-        //             setPeriods(data)
-        //         })
-        // }
-        // catch (e) {
-        //     console.log(e)
-        // }
-        // analyse periods
-        // code
-        setPeriods([
-                {
-                    "speed": 73.3,
-                    "from": "2024-03-04 08:05:22",
-                    "to": "2024-03-04 11:09:22"
-                },
-                {
-                    "speed": 93.0,
-                    "from": "2024-03-04 18:33:21",
-                    "to": "2024-03-04 23:11:43"
-                },
-                {
-                    "speed": 83.3,
-                    "from": "2024-03-05 09:28:44",
-                    "to": "2024-04-05 14:30:18"
-                },
-                {
-                    "speed": 15.3,
-                    "from": "2024-03-05 16:16:38",
-                    "to": "2024-03-05 16:19:22"
-                },
-                {
-                    "speed": 41.6,
-                    "from": "2024-03-05 22:56:38",
-                    "to": "2024-03-05 23:12:35"
-                },
-                {
-                    "speed": 18.3,
-                    "from": "2024-03-06 00:35:00",
-                    "to": "2024-03-06 01:50:39"
-                }
-            ])
-        // filterPeriods()
-        formattedPeriods()
+        try {
+            fetch("http://localhost:90/schedule")
+                .then(response => response.json())
+                .then(data => {
+                    setPeriods(data)
+                    filterPeriods()
+                    formattedPeriods()
+                })
+        }
+        catch (e) {
+            console.error(e)
+        }
     }, [])
 
     return (
